@@ -1,0 +1,10 @@
+{
+    "Generate": "產生",
+    "ID": "編號",
+    "Shorten URL": "短網址",
+    "Target URL": "目標網址",
+    "URL shortened failed. Please try again later.": "短網址產生失敗，請稍後再試",
+    "URL shortened successfully!": "短網址產生成功！",
+    "URL Shortener": "短網址產生器",
+    "URL Shortener: Do not insert illegal or dangerous links.": "短網址產生器：請勿置入違法或有危險性的連結。"
+}
