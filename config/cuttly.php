@@ -1,7 +1,9 @@
 <?php
 
+/*
+ * You can place your custom package configuration in here.
+ */
 return [
     'domain' => env('CUTTLY_DOMAIN'),
-    'base_uri' => env('CUTTLY_API_URL'),
-    'api_key' => env('CUTTLY_API_KEY')
+    'key'    => env('CUTTLY_KEY', '')
 ];

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ShortUrls;
 use Illuminate\Http\Request;
-use Slvler\Cuttly\Facades\Cuttly;
+use ToneflixCode\Cuttly\Cuttly;
 
 class ShortUrlsController extends Controller
 {
@@ -30,12 +30,12 @@ class ShortUrlsController extends Controller
         $request->validate([
            'url' => 'required|url'
         ]);
-        $response = Cuttly::edit(['edit' => '', 'short' => $request->url]);
-        if (!($response = json_decode($response))) {
+        $response = (new Cuttly())->shorten($request->url);
+        if ($response['status'] !== 7) {
             return back()->with('error', __('URL shortened failed. Please try again later.'))->withInput();
         }
         $input['url'] = $request->url;
-        $input['code'] = pathinfo($response->url->shortLink)['basename'];
+        $input['code'] = pathinfo($response['shortLink'])['basename'];
         ShortUrls::create($input);
         return redirect('short-url/generate')
              ->with('success', __('URL shortened successfully!'));

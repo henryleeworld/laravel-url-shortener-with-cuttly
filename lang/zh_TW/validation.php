@@ -22,6 +22,7 @@ return [
         'string'  => ':Attribute 必須介於 :min 至 :max 個字元之間。',
     ],
     'boolean'              => ':Attribute 必須為布林值。',
+    'can'                  => ':Attribute 字段包含未經授權的值。',
     'confirmed'            => ':Attribute 確認欄位的輸入不一致。',
     'current_password'     => '當前密碼不正確。',
     'date'                 => ':Attribute 不是有效的日期。',
